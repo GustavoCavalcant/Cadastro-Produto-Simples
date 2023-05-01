@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListarProdutosComponent } from './components/listar-produtos/listar-produtos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -21,11 +20,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { CriarProdutoComponent } from './produto/criar-produto/criar-produto.component';
+import { ListarProdutosComponent } from './produto/listar-produtos/listar-produtos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-      ListarProdutosComponent
+      ListarProdutosComponent,
+      CriarProdutoComponent
    ],
   imports: [
     BrowserModule,

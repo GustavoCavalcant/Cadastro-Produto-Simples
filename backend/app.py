@@ -26,16 +26,15 @@ def listar_produtos():
         })
     return jsonify(produtos)
 
-# @app.route('/produtos', methods=['POST'])
-# def cadastrar_produto():
-#     nome = request.json['nome']
-#     preco = request.json['preco']
-#     descricao = request.json['descricao']
-#     cur = mysql.connection.cursor()
-#     cur.execute('INSERT INTO produto (nome, preco, descricao) VALUES (%s, %s, %s)', (nome, preco, descricao))
-#     mysql.connection.commit()
-#     cur.close()
-#     return jsonify({'mensagem': 'Produto cadastrado com sucesso'})
+@app.route('/produtos', methods=['POST'])
+def cadastrar_produto():
+    name = request.json['name']
+    price = request.json['price']
+    cur = mysql.connection.cursor()
+    cur.execute(f'INSERT INTO product (name, price) VALUES (%s, %s)', (name, price))
+    mysql.connection.commit()
+    cur.close()
+    return jsonify({'mensagem': 'Produto cadastrado com sucesso'})
 
 if __name__ == '__main__':
     app.run()

@@ -1,4 +1,4 @@
-## Executar essa query dentro do MySQL Workbench, para gerar o banco de dados com a tabela de estoque de produtos
+-- Executar essa query dentro do MySQL Workbench, para gerar o banco de dados com a tabela de estoque de produtos
 CREATE DATABASE IF NOT EXISTS products DEFAULT CHARACTER SET utf8 ;
 
 use products;

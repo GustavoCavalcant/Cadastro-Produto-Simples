@@ -1,13 +1,17 @@
-
-
-<div class="mat-elevation-z4">
+<div class="mat-elevation-z6">
   <mat-card class="home mat-elevation-z3">
     <mat-card-title class="title">
         Bem Vindo!
     </mat-card-title>
     <mat-card-subtitle class="subtitle">
-        Sistema simples para cadastro de produtos.
+        Sistema simples para gerenciamento de produtos.
     </mat-card-subtitle>
+    <mat-card-content>
+      Clique no botão abaixo para cadastrar um novo produto!
+    </mat-card-content>
+    <button mat-raised-button (click)="navegarParaCriarNovoProduto()" color="primary">
+      Novo Produto
+    </button>
   </mat-card>
   <table mat-table [dataSource]="produtos">
     <!-- Id Column -->
@@ -31,7 +35,6 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-
 </div>
 
 
