@@ -13,10 +13,10 @@ mysql = MySQL(app)
 @app.route('/produtos', methods=['GET'])
 @cross_origin(origin='*')
 def listar_produtos():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM product')
-    result = cur.fetchall()
-    cur.close()
+    cursor = mysql.connection.cursor()
+    cursor.execute('SELECT * FROM product')
+    result = cursor.fetchall()
+    cursor.close()
     produtos = []
     for produto in result:
         produtos.append({
@@ -26,6 +26,7 @@ def listar_produtos():
         })
     return jsonify(produtos)
 
+
 @app.route('/produtos', methods=['POST'])
 def cadastrar_produto():
     name = request.json['name']
@@ -33,8 +34,30 @@ def cadastrar_produto():
     cur = mysql.connection.cursor()
     cur.execute(f'INSERT INTO product (name, price) VALUES (%s, %s)', (name, price))
     mysql.connection.commit()
-    cur.close()
-    return jsonify({'mensagem': 'Produto cadastrado com sucesso'})
+    return jsonify({'mensagem': 'Produto cadastrado com sucesso!'})
+
+
+@app.route('/produtos/<int:id>', methods=['PUT'])
+def atualizar_produto(id):
+    name = request.json['name']
+    price = request.json['price']
+    cursor = mysql.connection.cursor()
+    cursor.execute('UPDATE product SET name = %s, price = %s WHERE id = %s', (name, price, id))
+    mysql.connection.commit()
+    cursor.close()
+    return jsonify({'mensagem': 'Produto atualizado com sucesso!'})
+
+
+@app.route('/produtos/<int:id>', methods=['DELETE'])
+def delete_produto(id):
+    cursor = mysql.connection.cursor()
+    cursor.execute('DELETE FROM product WHERE id = %s', (id,))
+    mysql.connection.commit()
+    cursor.close()
+    return jsonify({'mensagem': 'Produto exluído com sucesso!'})
+
+
+
 
 if __name__ == '__main__':
     app.run()
