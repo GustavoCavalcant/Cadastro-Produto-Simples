@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from './../../components/produtos.service';
-import { Produto } from 'src/app/components/produto';
+import { Produto } from 'src/app/components/produto.model';
 import { Router } from '@angular/router';
 
 
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class ListarProdutosComponent implements OnInit {
 
   produtos!: Produto[];
-  displayedColumns = ['id', 'name', 'price']
+  displayedColumns = ['id', 'name', 'price', 'action']
 
   constructor(private produtosService: ProdutosService,
     private router: Router) { }

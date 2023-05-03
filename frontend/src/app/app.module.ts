@@ -22,12 +22,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { CriarProdutoComponent } from './produto/criar-produto/criar-produto.component';
 import { ListarProdutosComponent } from './produto/listar-produtos/listar-produtos.component';
+import { DeletarProdutoComponent } from './produto/deletar-produto/deletar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
       ListarProdutosComponent,
-      CriarProdutoComponent
+      CriarProdutoComponent,
+      DeletarProdutoComponent
    ],
   imports: [
     BrowserModule,

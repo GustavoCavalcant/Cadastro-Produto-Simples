@@ -57,7 +57,19 @@ def delete_produto(id):
     return jsonify({'mensagem': 'Produto exluído com sucesso!'})
 
 
-
+@app.route('/produtos/<int:id>', methods=['GET'])
+def buscar_produto_por_id(id):
+    cursor = mysql.connection.cursor()
+    cursor.execute('SELECT * FROM product WHERE id = %s', (id,))
+    result = cursor.fetchone()
+    mysql.connection.commit()
+    cursor.close()
+    produto = {
+        "id": result[0],
+        "name": result[1],
+        "price": result[2]
+    }
+    return jsonify(produto)
 
 if __name__ == '__main__':
     app.run()

@@ -1,3 +1,7 @@
+table {
+  width: 100%;
+}
+
 .home .title {
   font-size: 3rem;
   font-weight: 300;
@@ -7,6 +11,15 @@
 .home .subtitle {
   font-size: 1.1rem;
 }
-table {
-  width: 100%;
+
+.edit {
+  margin-right: 10px;
+}
+
+.edit > i {
+  color: #d9cd26
+}
+
+.delete > i{
+  color: #e35e6b;
 }
