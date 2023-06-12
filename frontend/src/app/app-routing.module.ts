@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListarProdutosComponent } from './produto/listar-produtos/listar-produtos.component';
-import { CriarProdutoComponent } from './produto/criar-produto/criar-produto.component';
-import { DeletarProdutoComponent } from './produto/deletar-produto/deletar-produto.component';
+import { ListarProdutosComponent } from './components/produto/listar-produtos/listar-produtos.component';
+import { CriarProdutoComponent } from './components/produto/criar-produto/criar-produto.component';
+import { DeletarProdutoComponent } from './components/produto/deletar-produto/deletar-produto.component';
+import { AlterarProdutoComponent } from './components/produto/alterar-produto/alterar-produto.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'produtos/deletar/:id',
     component: DeletarProdutoComponent
+  },
+  {
+    path: 'produtos/alterar/:id',
+    component: AlterarProdutoComponent
   }
 ];
 

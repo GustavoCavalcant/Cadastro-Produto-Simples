@@ -13,30 +13,33 @@ import { MatListModule } from '@angular/material/list';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import{ FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { CriarProdutoComponent } from './produto/criar-produto/criar-produto.component';
-import { ListarProdutosComponent } from './produto/listar-produtos/listar-produtos.component';
-import { DeletarProdutoComponent } from './produto/deletar-produto/deletar-produto.component';
+
+import { CriarProdutoComponent } from './components/produto/criar-produto/criar-produto.component';
+import { ListarProdutosComponent } from './components/produto/listar-produtos/listar-produtos.component';
+import { DeletarProdutoComponent } from './components/produto/deletar-produto/deletar-produto.component';
+import { AlterarProdutoComponent } from './components/produto/alterar-produto/alterar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-      ListarProdutosComponent,
-      CriarProdutoComponent,
-      DeletarProdutoComponent
-   ],
+    ListarProdutosComponent,
+    CriarProdutoComponent,
+    DeletarProdutoComponent,
+    AlterarProdutoComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-   MatToolbarModule,
+    MatToolbarModule,
     MatSidenavModule,
     MatListModule,
     MatCardModule,
@@ -47,9 +50,9 @@ import { DeletarProdutoComponent } from './produto/deletar-produto/deletar-produ
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
